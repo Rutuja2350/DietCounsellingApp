@@ -1,34 +1,23 @@
 package com.project3.onlinedietcounsellingapp;
 
 public class Client {
-    private String Address, Age, Height, Weight, HealthIssue, Medications, Expectations;
+    private String Address, Age, Height, Weight, Gender, FinancialStatus, HealthIssues, Medications, Expectations;
 
     //Alt+ins
-    public Client(String address, String age, String height, String weight, String healthIssueText, String medicationsText, String expectationsText) {
+    public Client(String address, String age, String height, String weight, String gender, String financialStatus, String healthIssues, String medications, String expectations) {
         this.Address = address;
         Age = age;
         Height = height;
         Weight = weight;
-        HealthIssue = healthIssueText;
-        Medications = medicationsText;
-        Expectations = expectationsText;
+        HealthIssues = healthIssues;
+        Medications = medications;
+        Expectations = expectations;
+        Gender = gender;
+        FinancialStatus = financialStatus;
     }
 
     public Client(){
 
-    }
-
-    public void setForm1(String address,String age,String height,String weight){
-        this.Address = address;
-        Age = age;
-        Height = height;
-        Weight = weight;
-    }
-
-    public void setForm2(String healthIssues,String medications,String expectations){
-        this.HealthIssue = healthIssues;
-        Medications = medications;
-        Expectations = expectations;
     }
 
     public String getAddress() { return Address; }
@@ -43,15 +32,19 @@ public class Client {
         return Weight;
     }
 
-    public String getHealthIssueText() {
-        return HealthIssue;
+    public String getGender() { return Gender; }
+
+    public String getFinancialStatus() { return FinancialStatus; }
+
+    public String getHealthIssues() {
+        return HealthIssues;
     }
 
-    public String getMedicationsText() {
+    public String getMedications() {
         return Medications;
     }
 
-    public String getExpectationsText() {
+    public String getExpectations() {
         return Expectations;
     }
 

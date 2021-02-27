@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.project3.onlinedietcounsellingapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,10 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineDietCounsellingApp">
-        <activity android:name=".InputForm.Form2"></activity>
-        <activity android:name=".InputForm.Form" />
+        <activity android:name=".MyAccount"></activity>
+        <activity android:name=".payment.paymentPage" />
+        <activity android:name=".payment.selectPlan" />
+        <activity android:name=".Form" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".Home" />
         <activity android:name=".Authentication.Login" />
         <activity android:name=".Authentication.Register" />
         <activity

@@ -14,7 +14,11 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home2);
+        setContentView(R.layout.activity_home);
+    }
+
+    public void myAcc(View view) {
+        startActivity(new Intent(getApplicationContext(), MyAccount.class));
     }
 
     public void logout(View view) {
