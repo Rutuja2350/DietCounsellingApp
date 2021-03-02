@@ -9,12 +9,9 @@ import android.widget.Button;
 import android.widget.RadioButton;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.project3.onlinedietcounsellingapp.Authentication.Login;
 import com.project3.onlinedietcounsellingapp.HomeActivity;
-import com.project3.onlinedietcounsellingapp.MyAccount;
 import com.project3.onlinedietcounsellingapp.R;
 
 import java.util.HashMap;

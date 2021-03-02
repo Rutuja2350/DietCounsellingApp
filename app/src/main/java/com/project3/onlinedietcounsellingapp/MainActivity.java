@@ -1,16 +1,22 @@
 package com.project3.onlinedietcounsellingapp;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -22,8 +28,6 @@ import com.project3.onlinedietcounsellingapp.Authentication.Login;
 import com.project3.onlinedietcounsellingapp.Authentication.Register;
 import com.project3.onlinedietcounsellingapp.R;
 
-import javax.annotation.Nullable;
-
 public class MainActivity extends AppCompatActivity {
 
     Button mRegisterBtn, mLoginBtn;
@@ -32,20 +36,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mLoginBtn   = findViewById(R.id.loginBtn);
-        mRegisterBtn   = findViewById(R.id.registerBtn);
 
-//        NAVBAR
-//        AppBarConfiguration appBarConfiguration =
-//                new AppBarConfiguration.Builder(navController.getGraph()).build();
-//
-//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-//        AppBarConfiguration appBarConfiguration =
-//                new AppBarConfiguration.Builder(navController.getGraph()).build();
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        NavigationUI.setupWithNavController(
-//                toolbar, navController, appBarConfiguration);
-
+        mLoginBtn = findViewById(R.id.loginBtn);
+        mRegisterBtn = findViewById(R.id.registerBtn);
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +53,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Register.class));
             }
         });
-
     }
 }

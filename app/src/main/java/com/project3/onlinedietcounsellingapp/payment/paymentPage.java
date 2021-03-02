@@ -20,7 +20,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.project3.onlinedietcounsellingapp.MyAccount;
+import com.project3.onlinedietcounsellingapp.MyProfile;
 import com.project3.onlinedietcounsellingapp.R;
 
 import java.util.ArrayList;
@@ -164,7 +164,7 @@ public class paymentPage extends AppCompatActivity {
                 //Code to handle successful transaction here.
                 Toast.makeText(paymentPage.this, "Transaction successful.", Toast.LENGTH_SHORT).show();
                 Log.e("UPI", "payment successfull: "+approvalRefNo);
-                startActivity(new Intent(getApplicationContext(), MyAccount.class));
+                startActivity(new Intent(getApplicationContext(), MyProfile.class));
 
             }
             else if("Payment cancelled by user.".equals(paymentCancel)) {

@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineDietCounsellingApp">
-        <activity android:name=".MyAccount"></activity>
+        <activity android:name=".MyProfile"></activity>
         <activity android:name=".payment.paymentPage" />
         <activity android:name=".payment.selectPlan" />
         <activity android:name=".Form" />
