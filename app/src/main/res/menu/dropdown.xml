@@ -6,11 +6,10 @@
     <item
         android:id="@+id/logoutDropDownOpt"
         android:title="Logout"
-        app:showAsAction="never"
-        />
+        app:showAsAction="never"/>
     <item
         android:id="@+id/myProfileDropDownOpt"
         android:title="My Profile"
-        app:showAsAction="never"
-        />
+        app:showAsAction="never"/>
+
 </menu>
