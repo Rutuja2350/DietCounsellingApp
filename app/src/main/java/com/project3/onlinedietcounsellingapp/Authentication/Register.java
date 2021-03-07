@@ -19,11 +19,14 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.project3.onlinedietcounsellingapp.Form;
 import com.project3.onlinedietcounsellingapp.HomeActivity;
 import com.project3.onlinedietcounsellingapp.R;
+import com.project3.onlinedietcounsellingapp.payment.selectPlan;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,6 +40,7 @@ public class Register extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseFirestore fStore;
     String userID;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,14 +58,15 @@ public class Register extends AppCompatActivity {
         progressBar   = findViewById(R.id.progressBar);
 
         if(fAuth.getCurrentUser() != null){
-            Log.i("TAG","THERE IS ALREADY A CURRENT USER ");
-            startActivity(new Intent(getApplicationContext(),Login.class));     //sending user to main activity
+            FirebaseAuth.getInstance().signOut();  //logout user
+            startActivity(new Intent(getApplicationContext(),Register.class));     //sending user to main activity
             finish();
         }
 
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Log.i("TAG","THERE IS NO CURRENT USER ");
                 final String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
@@ -85,7 +90,7 @@ public class Register extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
 
                 //register the user with firebase
-
+                //save to authentication
                 fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -94,11 +99,26 @@ public class Register extends AppCompatActivity {
                             Log.i("TAG1","ENTERED IF");
                             Toast.makeText(Register.this, "User Created", Toast.LENGTH_SHORT).show();
                             userID = fAuth.getCurrentUser().getUid(); //this is to retrieve the ID of currently loggedIn user
+
+                            //save to realtime db
+                            Map<String,Object> user1 = new HashMap<>(); //retrieving the information using the retrieved userID
+                            user1.put("name", fullName);
+                            user1.put("email", email);
+                            user1.put("phone", phone);
+                            user1.put("password", password);
+
+                            Users users = new Users(fullName,password,email,phone);
+                            String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                            databaseReference= FirebaseDatabase.getInstance().getReference();
+                            databaseReference.child("Users").child(userId).setValue(users);
+
+                            //save to authentication db
                             DocumentReference documentReference = fStore.collection("users") .document(userID);
                             Map<String,Object> user = new HashMap<>(); //retrieving the information using the retrieved userID
-                            user.put("fName", fullName);
+                            user.put("name", fullName);
                             user.put("email", email);
                             user.put("phone", phone);
+
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {

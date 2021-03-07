@@ -6,7 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".MyProfile">
 
-    <include layout="@layout/toolbar"/>
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <ScrollView
         android:layout_width="391dp"
@@ -23,87 +26,88 @@
             android:padding="15dp">
 
             <EditText
-                android:id="@+id/name"
+                android:id="@+id/pname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="name"
+                android:paddingTop="10dp"
+                android:hint="name"
                 android:textSize="30dp" />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/pemail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="email"
+                android:hint="email"
                 android:textSize="30dp"/>
 
             <EditText
-                android:id="@+id/phone"
+                android:id="@+id/pphone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="phone number"
+                android:hint="phone number"
                 android:textSize="30dp"/>
 
             <EditText
-                android:id="@+id/addresss"
+                android:id="@+id/paddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="address"
+                android:hint="address"
                 android:textSize="30dp"/>
 
             <EditText
-                android:id="@+id/age"
+                android:id="@+id/page"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="age"
+                android:hint="age"
                 android:textSize="30dp"/>
 
             <EditText
-                android:id="@+id/expectations"
+                android:id="@+id/pexpectations"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="expectations"
+                android:hint="expectations"
                 android:textSize="30dp"/>
 
             <EditText
-                android:id="@+id/financialStatus"
+                android:id="@+id/pfinancialStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="financial status"
+                android:hint="financial status"
                 android:textSize="30dp"/>
 
             <EditText
-                android:id="@+id/gender"
+                android:id="@+id/pgender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="gender"
+                android:hint="gender"
                 android:textSize="30dp"/>
 
             <EditText
-                android:id="@+id/healthIssues"
+                android:id="@+id/phealthIssues"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="health issues"
+                android:hint="health issues"
                 android:textSize="30dp"/>
 
             <EditText
-                android:id="@+id/height"
+                android:id="@+id/pheight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="height"
+                android:hint="height"
                 android:textSize="30dp"/>
 
             <EditText
-                android:id="@+id/weight"
+                android:id="@+id/pweight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="weight"
+                android:hint="weight"
                 android:textSize="30dp"/>
 
             <EditText
-                android:id="@+id/medications"
+                android:id="@+id/pmedications"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="medications"
+                android:hint="medications"
                 android:textSize="30dp"/>
 
             <Button

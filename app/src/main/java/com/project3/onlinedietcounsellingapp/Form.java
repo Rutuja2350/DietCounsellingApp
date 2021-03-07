@@ -12,6 +12,7 @@ import android.widget.RadioButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.project3.onlinedietcounsellingapp.Authentication.Client;
 import com.project3.onlinedietcounsellingapp.payment.selectPlan;
 
 public class Form extends AppCompatActivity {
